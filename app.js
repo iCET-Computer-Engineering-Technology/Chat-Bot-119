@@ -6,6 +6,8 @@
 // console.log("Bun");
 
 
+
+
 // fetch("https://jsonplaceholder.typicode.com/todos/1").then(res => res.json()).then(data => {
 //     console.log(data);
 //     console.log("Rice 01");
@@ -51,50 +53,40 @@
 
 
 
-function sendPromt() {
-    let txtPromt = document.getElementById("txtPromt").value;
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("X-goog-api-key", "AIzaSyDjiy6K4Vz3Z4cqicxKwRPsFaP6JAqleQI");
+// function sendPromt() {
+//     let txtPromt = document.getElementById("txtPromt").value;
+//     const myHeaders = new Headers();
+//     myHeaders.append("Content-Type", "application/json");
+//     myHeaders.append("X-goog-api-key", "AIzaSyDjiy6K4Vz3Z4cqicxKwRPsFaP6JAqleQI");
 
-    const raw = JSON.stringify({
-        "contents": [
-            {
-                "parts": [
-                    {
-                        "text": txtPromt
-                    }
-                ]
-            }
-        ]
-    });
+//     const raw = JSON.stringify({
+//         "contents": [
+//             {
+//                 "parts": [
+//                     {
+//                         "text": txtPromt
+//                     }
+//                 ]
+//             }
+//         ]
+//     });
 
-    const requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: raw,
-        redirect: "follow"
-    };
+//     const requestOptions = {
+//         method: "POST",
+//         headers: myHeaders,
+//         body: raw,
+//         redirect: "follow"
+//     };
 
-    fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent", requestOptions)
-        .then((response) => response.json())
-        .then((result) => {
-            document.getElementById("lblResult").innerHTML = marked.parse(result.candidates[0].content.parts[0].text);
-            console.log(result.candidates[0].content.parts[0].text);
+//     fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent", requestOptions)
+//         .then((response) => response.json())
+//         .then((result) => {
+//             document.getElementById("lblResult").innerHTML = marked.parse(result.candidates[0].content.parts[0].text);
+//             console.log(result.candidates[0].content.parts[0].text);
 
-        })
-        .catch((error) => console.error(error));
-}
-
-
-
-
-
-
-
-
-
-
+//         })
+//         .catch((error) => console.error(error));
+// }
 
 
 
@@ -161,7 +153,51 @@ function sendPromt() {
 // }, 5000);
 
 
-console.log("Bun");
+// console.log("Bun");
+
+
+// let numberList = [10, 20, 30, 40, 50, 60, 70, 80];
+
+// customerName.forEach(element => {
+//     console.log(element);
+// });
+
+
+// for (let i = 0; i < customerName.length; i++) {
+//     console.log(i + " : " + customerName[i]);
+// }
+
+
+// for (let x of customerName) {
+//     console.log(x);
+// }
+
+// numberList.forEach((data) => {
+//     console.log(data);
+// })
+
+import Customer from "./customer.js";
+
+let customer = new Customer("C001", "kamal", "walana", 75000.0);
+
+console.log(customer);
+
+
+import getSum, { API_KEY } from "./value.js";
+
+
+let val = getSum(10, 20);
+
+console.log(val);
+
+console.log(API_KEY);
+
+
+
+
+
+
+
 
 
 
